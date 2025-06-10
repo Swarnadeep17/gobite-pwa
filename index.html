@@ -9,68 +9,87 @@
   <meta name="robots" content="index, follow">
   <title>GoBite.in | Order Local. Earn More.</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <script src="https://unpkg.com/@tailwindcss/forms"></script>
   <style>
     body {
       background-color: #ffffff;
       color: #000000;
       font-family: 'Segoe UI', sans-serif;
     }
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .button {
+      transition: all 0.3s ease-in-out;
+    }
     .button:hover {
       background-color: #000;
       color: #fff;
+      transform: scale(1.03);
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
-  <header class="text-center p-6 border-b border-black">
-    <h1 class="text-4xl font-bold">GoBite.in</h1>
+  <header class="text-center p-6 border-b border-black fade-in">
+    <h1 class="text-4xl font-bold tracking-tight">GoBite.in</h1>
     <p class="text-lg text-gray-700 mt-2">Digital ordering for local food businesses. Fast, free, and UPI-enabled.</p>
-  </header>  <main class="p-6 max-w-4xl mx-auto">
-    <section class="text-center my-8">
-      <h2 class="text-2xl font-semibold">No apps. No subscriptions. Just seamless ordering.</h2>
-      <p class="text-gray-600 mt-2">GoBite lets customers place orders via QR code and store owners manage everything online with ease.</p><div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-    <a href="/client.html" class="button border border-black px-6 py-3 font-medium">I'm a Store Owner</a>
-    <a href="/customer.html" class="button border border-black px-6 py-3 font-medium">I'm a Customer</a>
-    <a href="/instant.html" class="button border border-black px-6 py-3 font-medium">Order On the Go</a>
+  </header>  <main class="p-6 max-w-5xl mx-auto fade-in">
+    <section class="text-center my-10">
+      <h2 class="text-3xl font-semibold">No apps. No subscriptions. Just seamless ordering.</h2>
+      <p class="text-gray-600 mt-3 max-w-xl mx-auto">GoBite lets customers place orders via QR code and store owners manage everything online with ease.</p><div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+    <a href="/client.html" class="button border border-black px-6 py-3 font-medium rounded-md">I'm a Store Owner</a>
+    <a href="/customer.html" class="button border border-black px-6 py-3 font-medium rounded-md">I'm a Customer</a>
+    <a href="/instant.html" class="button border border-black px-6 py-3 font-medium rounded-md">Order On the Go</a>
   </div>
 </section>
 
-<section class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-  <div class="border p-4 shadow hover:shadow-lg transition duration-200">
+<section class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 fade-in">
+  <div class="border p-4 shadow card rounded-md">
     <h3 class="text-lg font-bold">🧾 Smart PDF Receipts</h3>
-    <p class="text-sm text-gray-600">Each order generates a downloadable PDF with QR code and order details.</p>
+    <p class="text-sm text-gray-600 mt-1">Each order generates a downloadable PDF with QR code and order details.</p>
   </div>
-  <div class="border p-4 shadow hover:shadow-lg transition duration-200">
+  <div class="border p-4 shadow card rounded-md">
     <h3 class="text-lg font-bold">💳 UPI Payments</h3>
-    <p class="text-sm text-gray-600">Accept instant payments directly to your wallet via Razorpay.</p>
+    <p class="text-sm text-gray-600 mt-1">Accept instant payments directly to your wallet via Razorpay.</p>
   </div>
-  <div class="border p-4 shadow hover:shadow-lg transition duration-200">
+  <div class="border p-4 shadow card rounded-md">
     <h3 class="text-lg font-bold">🎁 Free Orders via Referral</h3>
-    <p class="text-sm text-gray-600">Earn and share 10 fee-free orders just by inviting friends or shops.</p>
+    <p class="text-sm text-gray-600 mt-1">Earn and share 10 fee-free orders just by inviting friends or shops.</p>
   </div>
-  <div class="border p-4 shadow hover:shadow-lg transition duration-200">
+  <div class="border p-4 shadow card rounded-md">
     <h3 class="text-lg font-bold">🔔 Real-Time Alerts</h3>
-    <p class="text-sm text-gray-600">Store owners get sound + vibration notifications when new orders arrive.</p>
+    <p class="text-sm text-gray-600 mt-1">Store owners get sound + vibration notifications when new orders arrive.</p>
   </div>
-  <div class="border p-4 shadow hover:shadow-lg transition duration-200">
+  <div class="border p-4 shadow card rounded-md">
     <h3 class="text-lg font-bold">📦 Instant Shop Setup</h3>
-    <p class="text-sm text-gray-600">Create your digital shop in minutes, no tech skills needed.</p>
+    <p class="text-sm text-gray-600 mt-1">Create your digital shop in minutes, no tech skills needed.</p>
   </div>
-  <div class="border p-4 shadow hover:shadow-lg transition duration-200">
+  <div class="border p-4 shadow card rounded-md">
     <h3 class="text-lg font-bold">📱 Mobile-First PWA</h3>
-    <p class="text-sm text-gray-600">Install GoBite like an app — lightweight and offline ready.</p>
+    <p class="text-sm text-gray-600 mt-1">Install GoBite like an app — lightweight and offline ready.</p>
   </div>
 </section>
 
-<section class="mt-10 border-t pt-6">
-  <h3 class="text-xl font-bold text-center">Loved by Businesses & Customers</h3>
-  <div class="mt-4 space-y-3 text-center text-gray-700">
+<section class="mt-12 border-t pt-8 fade-in">
+  <h3 class="text-2xl font-bold text-center mb-4">Loved by Businesses & Customers</h3>
+  <div class="space-y-3 text-center text-gray-700">
     <blockquote class="italic">"I started getting 30% more orders since using GoBite. It's like magic." – A local food cart owner</blockquote>
     <blockquote class="italic">"Ordering with GoBite is so simple, even my mom uses it." – A regular customer</blockquote>
   </div>
 </section>
 
-  </main>  <footer class="text-center py-6 text-gray-500 text-sm">
+  </main>  <footer class="text-center py-8 text-gray-500 text-sm fade-in">
     &copy; 2025 GoBite.in. All rights reserved.
   </footer>
 </body>
