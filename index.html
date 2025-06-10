@@ -2,17 +2,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoBite.in | Order Local. Earn More.</title>
-  <meta name="description" content="GoBite - Order food from local shops using QR codes and UPI. Store owners and customers manage everything from one place.">
-  <meta name="keywords" content="GoBite, food ordering PWA, QR food order, UPI shops, gobite app">
+  <title>GoBite.in | QR Ordering for Local Stores</title>
+  <meta name="description" content="GoBite is a PWA that lets local stores accept QR orders and UPI payments with no app required. Customers order in seconds. Store owners earn more.">
+  <meta name="keywords" content="GoBite, QR food ordering, UPI menu app, store food order, fast food payment, restaurant online order">
+  <meta property="og:title" content="GoBite.in | QR Ordering for Local Stores">
+  <meta property="og:description" content="Let customers order via QR and pay instantly. Store owners manage everything from their phone. No app. No coding.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gobite.in">
+  <meta name="theme-color" content="#000000">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', sans-serif; }
     .fade-in { animation: fadeIn 0.6s ease-in-out; }
     @keyframes fadeIn { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
-    .card-button { transition: transform 0.2s ease-in-out, background-color 0.2s; cursor: pointer; }
-    .card-button:hover { background-color: black; color: white; transform: scale(1.03); }
+    .card-button:hover { background-color: black; color: white; transform: scale(1.03); cursor: pointer; }
     .hidden { display: none; }
   </style>
 </head>
@@ -20,23 +24,46 @@
   <header class="text-center p-6 border-b border-black fade-in">
     <h1 class="text-4xl font-bold">GoBite.in</h1>
     <p class="text-gray-600 mt-2">Order food instantly. Accept QR payments. No app needed.</p>
-  </header>  <!-- Main Selector -->  <main id="main-options" class="max-w-3xl mx-auto p-6 text-center fade-in">
-    <h2 class="text-2xl font-semibold mb-4">Start Your GoBite Journey</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div class="border p-4 rounded card-button" onclick="showSection('client-register')">
-        <h3 class="text-xl font-bold">Become a Store Owner</h3>
-        <p class="text-sm text-gray-600 mt-1">List your menu, accept QR orders and get paid</p>
-      </div>
-      <div class="border p-4 rounded card-button" onclick="showSection('customer-section')">
-        <h3 class="text-xl font-bold">I'm a Customer</h3>
-        <p class="text-sm text-gray-600 mt-1">Find a shop and place your order</p>
-      </div>
-      <div class="border p-4 rounded card-button" onclick="showSection('instant-order')">
-        <h3 class="text-xl font-bold">Order Instantly</h3>
-        <p class="text-sm text-gray-600 mt-1">No login required</p>
-      </div>
-    </div>
-  </main>  <!-- Store Owner Registration -->  <section id="client-register" class="max-w-md mx-auto p-6 fade-in hidden">
+  </header>  <!-- Hero + Intro Section -->  <section id="main-options" class="max-w-3xl mx-auto p-6 text-center fade-in">
+    <h2 class="text-2xl font-semibold mb-2">Run your food business smarter</h2>
+    <p class="text-gray-600 mb-6">GoBite lets stores accept orders and UPI payments from customers in seconds — no downloads or setup needed.</p><!-- CTA Buttons -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+  <div class="border p-4 rounded card-button" onclick="showSection('client-register')">
+    <h3 class="text-lg font-bold">Become a Store Owner</h3>
+    <p class="text-sm text-gray-600 mt-1">List menu, accept QR orders</p>
+  </div>
+  <div class="border p-4 rounded card-button" onclick="showSection('customer-section')">
+    <h3 class="text-lg font-bold">I'm a Customer</h3>
+    <p class="text-sm text-gray-600 mt-1">Find a shop & order</p>
+  </div>
+  <div class="border p-4 rounded card-button" onclick="showSection('instant-order')">
+    <h3 class="text-lg font-bold">Order Instantly</h3>
+    <p class="text-sm text-gray-600 mt-1">No login required</p>
+  </div>
+</div>
+
+<!-- USP Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+  <div class="border p-4 rounded">
+    <h4 class="font-semibold">📲 QR Code Ordering</h4>
+    <p class="text-sm text-gray-600">Customers scan and order from their phones — no wait times.</p>
+  </div>
+  <div class="border p-4 rounded">
+    <h4 class="font-semibold">💸 UPI Payments</h4>
+    <p class="text-sm text-gray-600">Money goes straight to your wallet after platform fee deduction.</p>
+  </div>
+  <div class="border p-4 rounded">
+    <h4 class="font-semibold">⏱ Twice-a-Day Payouts</h4>
+    <p class="text-sm text-gray-600">Get your earnings deposited at 8 AM and 8 PM daily.</p>
+  </div>
+  <div class="border p-4 rounded">
+    <h4 class="font-semibold">🎁 Referral Bonuses</h4>
+    <p class="text-sm text-gray-600">Invite shops or users — both get 10 free orders without fees.</p>
+  </div>
+</div>
+
+  </section>  <!-- Register Client Section -->  <section id="client-register" class="max-w-md mx-auto p-6 fade-in hidden">
+    <button class="text-sm underline mb-4" onclick="showSection('main-options')">← Back to Home</button>
     <h2 class="text-2xl font-bold mb-4 text-center">Register Your Shop</h2>
     <form id="registerForm" class="space-y-4">
       <input type="text" name="shopName" placeholder="Shop Name" required class="w-full border border-gray-300 p-2 rounded">
@@ -53,13 +80,13 @@
       <button type="submit" class="bg-black text-white py-2 px-6 rounded w-full">Register</button>
     </form>
     <p class="text-center text-sm mt-4">Already registered? <a href="#" class="underline" onclick="alert('Login coming soon')">Login</a></p>
-  </section>  <!-- Customer Section (to be extended) -->  <section id="customer-section" class="hidden p-6 text-center">
-    <h2 class="text-xl font-semibold">Customer Order Flow</h2>
-    <p class="text-gray-600">Coming soon: store search, menu, and cart.</p>
-  </section>  <!-- Order Instantly (to be extended) -->  <section id="instant-order" class="hidden p-6 text-center">
-    <h2 class="text-xl font-semibold">Instant Order Flow</h2>
-    <p class="text-gray-600">Coming soon: no-login menu access and UPI payment.</p>
-  </section>  <footer class="text-center py-6 text-sm text-gray-500 border-t mt-10">&copy; 2025 GoBite.in</footer>  <!-- Firebase Logic -->  <script type="module">
+  </section>  <!-- Customer Section -->  <section id="customer-section" class="hidden p-6 text-center">
+    <button class="text-sm underline mb-4" onclick="showSection('main-options')">← Back to Home</button>
+    <h2 class="text-xl font-semibold">Customer Flow Coming Soon</h2>
+  </section>  <!-- Instant Order Section -->  <section id="instant-order" class="hidden p-6 text-center">
+    <button class="text-sm underline mb-4" onclick="showSection('main-options')">← Back to Home</button>
+    <h2 class="text-xl font-semibold">Instant Order Coming Soon</h2>
+  </section>  <footer class="text-center py-6 text-sm text-gray-500 border-t mt-10">&copy; 2025 GoBite.in — Empowering Local Stores</footer>  <!-- Firebase JS SDK -->  <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
