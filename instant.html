@@ -45,7 +45,21 @@
       <h2 class="text-lg font-semibold mb-2">Step 1: Your Details</h2>
       <input type="text" id="name" placeholder="Your Name" class="w-full border border-gray-300 p-2 rounded mb-3" required>
       <input type="tel" id="phone" placeholder="Phone Number" class="w-full border border-gray-300 p-2 rounded" required>
-    </section><section id="menu" class="mb-6">
+    </section><section class="mb-6">
+  <h2 class="text-lg font-semibold mb-2">Dine-in or Take-away?</h2>
+  <div class="flex gap-4">
+    <label class="flex items-center gap-2">
+      <input type="radio" name="mode" value="takeaway" class="accent-black" checked>
+      Take-away
+    </label>
+    <label class="flex items-center gap-2">
+      <input type="radio" name="mode" value="dinein" class="accent-black">
+      Dine-in
+    </label>
+  </div>
+</section>
+
+<section id="menu" class="mb-6">
   <h2 class="text-lg font-semibold mb-2">Step 2: Choose Items</h2>
   <div class="space-y-4">
     <div class="flex justify-between items-center border p-3 rounded">
@@ -66,8 +80,13 @@
 </section>
 
 <section class="mb-6">
-  <h2 class="text-lg font-semibold mb-2">Step 3: Pickup Time</h2>
-  <div id="pickup-options" class="flex flex-wrap gap-2"></div>
+  <h2 class="text-lg font-semibold mb-2">Pickup Time (Next 2 hours)</h2>
+  <div id="pickup-soon" class="flex flex-wrap gap-2"></div>
+</section>
+
+<section class="mb-6">
+  <h2 class="text-lg font-semibold mb-2">Later Today</h2>
+  <div id="pickup-later" class="flex flex-wrap gap-2"></div>
 </section>
 
 <section class="text-center">
@@ -78,30 +97,45 @@
   </main>  <footer class="text-center py-6 text-gray-400 text-sm border-t border-gray-200">
     &copy; 2025 GoBite.in
   </footer>  <script>
-    const container = document.getElementById('pickup-options');
+    const soonContainer = document.getElementById('pickup-soon');
+    const laterContainer = document.getElementById('pickup-later');
     const selectedSlot = { value: null };
 
-    function getUpcomingSlots(count = 4, interval = 30, closingTime = "22:00") {
-      const now = new Date();
-      now.setMinutes(now.getMinutes() + interval);
-
-      const slots = [];
-      const end = new Date();
-      const [h, m] = closingTime.split(":");
-      end.setHours(parseInt(h), parseInt(m), 0);
-
-      let current = new Date(now);
-      while (slots.length < count && current <= end) {
-        const hrs = current.getHours().toString().padStart(2, '0');
-        const mins = current.getMinutes().toString().padStart(2, '0');
-        slots.push(`${hrs}:${mins}`);
-        current.setMinutes(current.getMinutes() + interval);
-      }
-      return slots;
+    function parseTime(str) {
+      const [h, m] = str.split(":").map(Number);
+      const d = new Date();
+      d.setHours(h, m, 0, 0);
+      return d;
     }
 
-    function renderSlots() {
-      const slots = getUpcomingSlots();
+    function formatTime(date) {
+      return date.toTimeString().slice(0, 5);
+    }
+
+    function generateSlots(openTime = "10:00", closeTime = "22:00", interval = 30) {
+      const now = new Date();
+      const open = parseTime(openTime);
+      const close = parseTime(closeTime);
+      const start = new Date(Math.max(now.getTime() + interval * 60000, open.getTime()));
+      const end = close;
+
+      const soon = [], later = [];
+      const twoHoursLater = new Date(start.getTime() + 2 * 60 * 60000);
+
+      let current = new Date(start);
+      while (current <= end) {
+        const slot = formatTime(current);
+        if (current <= twoHoursLater) {
+          soon.push(slot);
+        } else {
+          later.push(slot);
+        }
+        current.setMinutes(current.getMinutes() + interval);
+      }
+      return { soon, later };
+    }
+
+    function renderButtons(slots, container) {
       slots.forEach(slot => {
         const btn = document.createElement('button');
         btn.textContent = slot;
@@ -115,6 +149,8 @@
       });
     }
 
-    renderSlots();
+    const { soon, later } = generateSlots("16:00", "22:00"); // Update these as needed
+    renderButtons(soon, soonContainer);
+    renderButtons(later, laterContainer);
   </script></body>
 </html>
