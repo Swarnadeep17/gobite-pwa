@@ -1,135 +1,125 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoBite.in | QR Ordering for Local Stores</title>
-  <meta name="description" content="GoBite is a PWA that lets local stores accept QR orders and UPI payments with no app required. Customers order in seconds. Store owners earn more.">
-  <meta name="keywords" content="GoBite, QR food ordering, UPI menu app, store food order, fast food payment, restaurant online order">
-  <meta property="og:title" content="GoBite.in | QR Ordering for Local Stores">
-  <meta property="og:description" content="Let customers order via QR and pay instantly. Store owners manage everything from their phone. No app. No coding.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://gobite.in">
-  <meta name="theme-color" content="#000000">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoBite.in | Elevate Your Local Food Experience</title>
+  <meta name="description" content="GoBite is a cutting-edge PWA connecting local stores and customers with QR ordering, instant UPI payments, and seamless PWA performance. Earn referral rewards, manage on-the-go, and delight your customers.">
+  <meta name="keywords" content="GoBite, QR ordering, UPI food ordering, PWA restaurant app, local food online, digital menu, referral rewards">
+  <meta property="og:title" content="GoBite.in | Elevate Your Local Food Experience" />
+  <meta property="og:description" content="QR code ordering, instant UPI payments, referral bonuses, and twice-daily payouts — all in one PWA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gobite.in" />
+  <meta name="theme-color" content="#000" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', sans-serif; }
-    .fade-in { animation: fadeIn 0.6s ease-in-out; }
-    @keyframes fadeIn { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
-    .card-button:hover { background-color: black; color: white; transform: scale(1.03); cursor: pointer; }
-    .hidden { display: none; }
+    body { font-family: 'Segoe UI', sans-serif; background: #fff; color: #000; }
+    .fade-in { animation: fadeIn 0.8s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+    .rainbow-text {
+      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
+      background-size: 400%;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: rainbow 6s linear infinite;
+    }
+    @keyframes rainbow { 0% {background-position: 0%;} 100% {background-position: 100%;} }
+    .btn-modern {
+      border: 2px solid #000;
+      padding: .75rem 1.5rem;
+      border-radius: .5rem;
+      font-weight: 600;
+      transition: all .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-modern::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.1);
+      transform: skewX(-20deg);
+      transition: left .5s ease;
+    }
+    .btn-modern:hover::before { left: 200%; }
+    .btn-modern:hover { background: #000; color: #fff; }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #000;
+      font-weight: 500;
+      transition: color .3s;
+    }
+    .back-btn:hover { color: #555; }
   </style>
 </head>
-<body class="bg-white text-black">
-  <header class="text-center p-6 border-b border-black fade-in">
-    <h1 class="text-4xl font-bold">GoBite.in</h1>
-    <p class="text-gray-600 mt-2">Order food instantly. Accept QR payments. No app needed.</p>
-  </header>  <!-- Hero + Intro Section -->  <section id="main-options" class="max-w-3xl mx-auto p-6 text-center fade-in">
-    <h2 class="text-2xl font-semibold mb-2">Run your food business smarter</h2>
-    <p class="text-gray-600 mb-6">GoBite lets stores accept orders and UPI payments from customers in seconds — no downloads or setup needed.</p><!-- CTA Buttons -->
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-  <div class="border p-4 rounded card-button" onclick="showSection('client-register')">
-    <h3 class="text-lg font-bold">Become a Store Owner</h3>
-    <p class="text-sm text-gray-600 mt-1">List menu, accept QR orders</p>
-  </div>
-  <div class="border p-4 rounded card-button" onclick="showSection('customer-section')">
-    <h3 class="text-lg font-bold">I'm a Customer</h3>
-    <p class="text-sm text-gray-600 mt-1">Find a shop & order</p>
-  </div>
-  <div class="border p-4 rounded card-button" onclick="showSection('instant-order')">
-    <h3 class="text-lg font-bold">Order Instantly</h3>
-    <p class="text-sm text-gray-600 mt-1">No login required</p>
-  </div>
-</div>
-
-<!-- USP Highlights -->
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-  <div class="border p-4 rounded">
-    <h4 class="font-semibold">📲 QR Code Ordering</h4>
-    <p class="text-sm text-gray-600">Customers scan and order from their phones — no wait times.</p>
-  </div>
-  <div class="border p-4 rounded">
-    <h4 class="font-semibold">💸 UPI Payments</h4>
-    <p class="text-sm text-gray-600">Money goes straight to your wallet after platform fee deduction.</p>
-  </div>
-  <div class="border p-4 rounded">
-    <h4 class="font-semibold">⏱ Twice-a-Day Payouts</h4>
-    <p class="text-sm text-gray-600">Get your earnings deposited at 8 AM and 8 PM daily.</p>
-  </div>
-  <div class="border p-4 rounded">
-    <h4 class="font-semibold">🎁 Referral Bonuses</h4>
-    <p class="text-sm text-gray-600">Invite shops or users — both get 10 free orders without fees.</p>
-  </div>
-</div>
-
-  </section>  <!-- Register Client Section -->  <section id="client-register" class="max-w-md mx-auto p-6 fade-in hidden">
-    <button class="text-sm underline mb-4" onclick="showSection('main-options')">← Back to Home</button>
-    <h2 class="text-2xl font-bold mb-4 text-center">Register Your Shop</h2>
-    <form id="registerForm" class="space-y-4">
-      <input type="text" name="shopName" placeholder="Shop Name" required class="w-full border border-gray-300 p-2 rounded">
-      <input type="tel" name="phone" placeholder="Phone Number" required class="w-full border border-gray-300 p-2 rounded">
-      <input type="email" name="email" placeholder="Email Address" required class="w-full border border-gray-300 p-2 rounded">
-      <input type="password" name="password" placeholder="Password" required class="w-full border border-gray-300 p-2 rounded">
-      <textarea name="address" placeholder="Shop Address" required class="w-full border border-gray-300 p-2 rounded"></textarea>
-      <label class="block text-sm mt-2">Upload Shop Logo</label>
-      <input type="file" name="logo" accept="image/*" class="w-full border border-gray-300 p-2 rounded">
-      <div class="flex gap-4">
-        <input type="time" name="openTime" required class="w-full border border-gray-300 p-2 rounded">
-        <input type="time" name="closeTime" required class="w-full border border-gray-300 p-2 rounded">
+<body>
+  <!-- Header -->
+  <header class="text-center py-8 fade-in">
+    <h1 class="text-5xl font-extrabold rainbow-text">GoBite.in</h1>
+    <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">The ultimate Progressive Web App for local stores and customers: QR ordering, instant UPI payments, referral bonuses, and twice-daily payouts.</p>
+  </header>  <!-- Main CTA -->  <section id="main-options" class="fade-in py-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-4">
+      <div class="border p-6 rounded-lg card-button" onclick="showSection('client-register')">
+        <h2 class="text-xl font-semibold mb-2">Store Owners</h2>
+        <p class="text-gray-600 mb-4">List your menu, accept QR orders, manage payouts.</p>
+        <span class="btn-modern">Register Now</span>
       </div>
-      <button type="submit" class="bg-black text-white py-2 px-6 rounded w-full">Register</button>
-    </form>
-    <p class="text-center text-sm mt-4">Already registered? <a href="#" class="underline" onclick="alert('Login coming soon')">Login</a></p>
-  </section>  <!-- Customer Section -->  <section id="customer-section" class="hidden p-6 text-center">
-    <button class="text-sm underline mb-4" onclick="showSection('main-options')">← Back to Home</button>
-    <h2 class="text-xl font-semibold">Customer Flow Coming Soon</h2>
-  </section>  <!-- Instant Order Section -->  <section id="instant-order" class="hidden p-6 text-center">
-    <button class="text-sm underline mb-4" onclick="showSection('main-options')">← Back to Home</button>
-    <h2 class="text-xl font-semibold">Instant Order Coming Soon</h2>
-  </section>  <footer class="text-center py-6 text-sm text-gray-500 border-t mt-10">&copy; 2025 GoBite.in — Empowering Local Stores</footer>  <!-- Firebase JS SDK -->  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyCB69XwvupB0D11opi0k944XRnFCbzCa8o",
-      authDomain: "gobite-e52e7.firebaseapp.com",
-      projectId: "gobite-e52e7",
-      storageBucket: "gobite-e52e7.firebasestorage.app",
-      messagingSenderId: "290200627920",
-      appId: "1:290200627920:web:de0d4fce299d69938f8cd5",
-      measurementId: "G-1CDHNEHSTE"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    document.getElementById("registerForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const data = Object.fromEntries(new FormData(form));
-      const { email, password, shopName, phone, address, openTime, closeTime } = data;
-      const logo = form.logo.files[0];
-
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const uid = userCredential.user.uid;
-        await setDoc(doc(db, "clients", uid), {
-          shopName, phone, email, address, openTime, closeTime,
-          logoUrl: logo ? URL.createObjectURL(logo) : "",
-          createdAt: new Date().toISOString()
-        });
-        alert("Registration successful!");
-        showSection("main-options");
-      } catch (error) {
-        alert("Error: " + error.message);
-      }
-    });
-
-    window.showSection = function (id) {
-      document.querySelectorAll("main, section").forEach(el => el.classList.add("hidden"));
-      document.getElementById(id)?.classList.remove("hidden");
+      <div class="border p-6 rounded-lg card-button" onclick="showSection('customer-section')">
+        <h2 class="text-xl font-semibold mb-2">Customers</h2>
+        <p class="text-gray-600 mb-4">Find stores, order food, and earn referral rewards.</p>
+        <span class="btn-modern">Start Ordering</span>
+      </div>
+      <div class="border p-6 rounded-lg card-button" onclick="showSection('instant-order')">
+        <h2 class="text-xl font-semibold mb-2">Order On The Go</h2>
+        <p class="text-gray-600 mb-4">No signup required — quick QR access to menus.</p>
+        <span class="btn-modern">Order Now</span>
+      </div>
+    </div>
+  </section>  <!-- USP Highlights -->  <section class="fade-in py-12">
+    <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-2">📲 QR Ordering</h3>
+        <p class="text-gray-600">Customers scan a code, place orders, and pay in seconds.</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-2">💳 UPI Payments</h3>
+        <p class="text-gray-600">Seamless, secure transactions straight to your store wallet.</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-2">🎁 Referral Rewards</h3>
+        <p class="text-gray-600">Earn free orders by inviting friends and other stores.</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-2">⏰ Instant Alerts</h3>
+        <p class="text-gray-600">Sound & vibration notifications for every new order.</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-2">💰 Twice Daily Payouts</h3>
+        <p class="text-gray-600">Automated transfers at 8 AM & 8 PM, no manual effort.</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-2">📄 Smart Receipts</h3>
+        <p class="text-gray-600">Auto-generated PDF receipts with QR tracking.</p>
+      </div>
+    </div>
+  </section>  <!-- Sections -->  <!-- Client Register -->  <section id="client-register" class="hidden max-w-md mx-auto p-6 fade-in">
+    <a class="back-btn" onclick="showSection('main-options')">← Back</a>
+    <h2 class="text-2xl font-bold mb-4">Register Your Shop</h2>
+    <!-- Form... -->
+  </section>  <!-- Customer Flow -->  <section id="customer-section" class="hidden p-6 fade-in">
+    <a class="back-btn" onclick="showSection('main-options')">← Back</a>
+    <h2 class="text-2xl font-bold mb-4">Find a Store</h2>
+    <!-- Search + Menu... -->
+  </section>  <!-- Instant Order -->  <section id="instant-order" class="hidden p-6 fade-in">
+    <a class="back-btn" onclick="showSection('main-options')">← Back</a>
+    <h2 class="text-2xl font-bold mb-4">Order On The Go</h2>
+    <!-- Instant order UI... -->
+  </section>  <footer class="text-center py-6 text-gray-500 border-t mt-12">&copy; 2025 GoBite.in</footer>  <script>
+    window.showSection = id => {
+      document.querySelectorAll('main, section').forEach(el => el.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
   </script></body>
 </html>
