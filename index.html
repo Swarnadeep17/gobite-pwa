@@ -9,8 +9,10 @@
   <meta name="robots" content="index, follow">
   <title>GoBite.in | Order Local. Earn More.</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <script src="https://unpkg.com/@tailwindcss/forms"></script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background-color: #ffffff;
       color: #000000;
@@ -23,13 +25,18 @@
       0% { opacity: 0; transform: translateY(10px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    .button {
+    .card-button {
       transition: all 0.3s ease-in-out;
+      border: 1px solid black;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      text-align: center;
     }
-    .button:hover {
-      background-color: #000;
-      color: #fff;
+    .card-button:hover {
+      background-color: black;
+      color: white;
       transform: scale(1.03);
+      cursor: pointer;
     }
     .card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -47,10 +54,19 @@
   </header>  <main class="p-6 max-w-5xl mx-auto fade-in">
     <section class="text-center my-10">
       <h2 class="text-3xl font-semibold">No apps. No subscriptions. Just seamless ordering.</h2>
-      <p class="text-gray-600 mt-3 max-w-xl mx-auto">GoBite lets customers place orders via QR code and store owners manage everything online with ease.</p><div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-    <a href="/client.html" class="button border border-black px-6 py-3 font-medium rounded-md">I'm a Store Owner</a>
-    <a href="/customer.html" class="button border border-black px-6 py-3 font-medium rounded-md">I'm a Customer</a>
-    <a href="/instant.html" class="button border border-black px-6 py-3 font-medium rounded-md">Order On the Go</a>
+      <p class="text-gray-600 mt-3 max-w-xl mx-auto">GoBite lets customers place orders via QR code and store owners manage everything online with ease.</p><div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <a href="/client.html" class="card-button">
+      <h3 class="text-xl font-semibold">I'm a Store Owner</h3>
+      <p class="text-sm text-gray-600 mt-1">Setup shop, manage menu, accept orders and payouts with ease.</p>
+    </a>
+    <a href="/customer.html" class="card-button">
+      <h3 class="text-xl font-semibold">I'm a Customer</h3>
+      <p class="text-sm text-gray-600 mt-1">Find shops, order food, earn rewards and get instant receipts.</p>
+    </a>
+    <a href="/instant.html" class="card-button">
+      <h3 class="text-xl font-semibold">Order On the Go</h3>
+      <p class="text-sm text-gray-600 mt-1">Just scan and order without signup. Perfect for walk-ins.</p>
+    </a>
   </div>
 </section>
 
