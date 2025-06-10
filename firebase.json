@@ -15,6 +15,10 @@
         "source": "/instant.html",
         "destination": "/instant.html"
       },
+{
+        "source": "/client.html",
+        "destination": "/client.html"
+      },
       {
         "source": "**",
         "destination": "/index.html"
