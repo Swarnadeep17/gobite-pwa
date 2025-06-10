@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="GoBite - Order local food online with UPI payments. For store owners and customers. No app, no hassle, just great food.">
+  <meta name="keywords" content="GoBite, food order PWA, UPI food app, local food delivery, QR code order, free food app, digital menu">
+  <meta name="author" content="GoBite.in">
+  <meta name="robots" content="index, follow">
+  <title>GoBite.in | Order Local. Earn More.</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .card-button {
+      transition: all 0.3s ease-in-out;
+      border: 1px solid black;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      text-align: center;
+    }
+    .card-button:hover {
+      background-color: black;
+      color: white;
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+    .icon-step {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 0.5rem;
+      stroke-width: 1.5;
+      stroke: #000;
+      fill: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="text-center p-6 border-b border-black fade-in">
+    <h1 class="text-4xl font-bold tracking-tight">GoBite.in</h1>
+    <p class="text-lg text-gray-700 mt-2">Digital ordering for local food businesses. Fast, free, and UPI-enabled.</p>
+  </header>  <main class="p-6 max-w-5xl mx-auto fade-in">
+    <section class="text-center my-10">
+      <h2 class="text-3xl font-semibold">No apps. No subscriptions. Just seamless ordering.</h2>
+      <p class="text-gray-600 mt-3 max-w-xl mx-auto">GoBite lets customers place orders via QR code and store owners manage everything online with ease.</p><div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <a href="/client.html" class="card-button">
+      <h3 class="text-xl font-semibold">I'm a Store Owner</h3>
+      <p class="text-sm text-gray-600 mt-1">Setup shop, manage menu, accept orders and payouts with ease.</p>
+    </a>
+    <a href="/customer.html" class="card-button">
+      <h3 class="text-xl font-semibold">I'm a Customer</h3>
+      <p class="text-sm text-gray-600 mt-1">Find shops, order food, earn rewards and get instant receipts.</p>
+    </a>
+    <a href="/instant.html" class="card-button">
+      <h3 class="text-xl font-semibold">Order On the Go</h3>
+      <p class="text-sm text-gray-600 mt-1">Just scan and order without signup. Perfect for walk-ins.</p>
+    </a>
+  </div>
+
+  <div class="mt-8">
+    <a href="#how-it-works" class="text-sm underline text-gray-600 hover:text-black">How GoBite Works ↓</a>
+  </div>
+</section>
+
+<section class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 fade-in">
+  <div class="border p-4 shadow card rounded-md">
+    <h3 class="text-lg font-bold">🧾 Smart PDF Receipts</h3>
+    <p class="text-sm text-gray-600 mt-1">Each order generates a downloadable PDF with QR code and order details.</p>
+  </div>
+  <div class="border p-4 shadow card rounded-md">
+    <h3 class="text-lg font-bold">💳 UPI Payments</h3>
+    <p class="text-sm text-gray-600 mt-1">Accept instant payments directly to your wallet via Razorpay.</p>
+  </div>
+  <div class="border p-4 shadow card rounded-md">
+    <h3 class="text-lg font-bold">🎁 Free Orders via Referral</h3>
+    <p class="text-sm text-gray-600 mt-1">Earn and share 10 fee-free orders just by inviting friends or shops.</p>
+  </div>
+  <div class="border p-4 shadow card rounded-md">
+    <h3 class="text-lg font-bold">🔔 Real-Time Alerts</h3>
+    <p class="text-sm text-gray-600 mt-1">Store owners get sound + vibration notifications when new orders arrive.</p>
+  </div>
+  <div class="border p-4 shadow card rounded-md">
+    <h3 class="text-lg font-bold">📦 Instant Shop Setup</h3>
+    <p class="text-sm text-gray-600 mt-1">Create your digital shop in minutes, no tech skills needed.</p>
+  </div>
+  <div class="border p-4 shadow card rounded-md">
+    <h3 class="text-lg font-bold">📱 Mobile-First PWA</h3>
+    <p class="text-sm text-gray-600 mt-1">Install GoBite like an app — lightweight and offline ready.</p>
+  </div>
+</section>
+
+<section id="how-it-works" class="mt-16 border-t pt-12 fade-in">
+  <h3 class="text-2xl font-bold text-center mb-6">How GoBite Works</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-step" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6a4 4 0 100 8 4 4 0 000-8zm0 0c0 1.657-2 3-2 3h4s-2-1.343-2-3z" /></svg>
+      <h4 class="text-lg font-semibold mt-2">Step 1: Discover</h4>
+      <p class="text-sm text-gray-600">Customer scans shop QR or opens shop link to browse the menu.</p>
+    </div>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-step" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 1.343-3 3m0 0c0 1.657 1.343 3 3 3m0 0c1.657 0 3-1.343 3-3m0 0c0-1.657-1.343-3-3-3m0 0V5m0 11v3" /></svg>
+      <h4 class="text-lg font-semibold mt-2">Step 2: Order & Pay</h4>
+      <p class="text-sm text-gray-600">Choose items, select pickup time, and pay via UPI instantly.</p>
+    </div>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-step" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+      <h4 class="text-lg font-semibold mt-2">Step 3: Pickup & Scan</h4>
+      <p class="text-sm text-gray-600">Show your QR receipt. The shop scans and completes the order.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mt-16 border-t pt-8 fade-in">
+  <h3 class="text-2xl font-bold text-center mb-4">Loved by Businesses & Customers</h3>
+  <div class="space-y-3 text-center text-gray-700">
+    <blockquote class="italic">"I started getting 30% more orders since using GoBite. It's like magic." – A local food cart owner</blockquote>
+    <blockquote class="italic">"Ordering with GoBite is so simple, even my mom uses it." – A regular customer</blockquote>
+  </div>
+</section>
+
+  </main>  <footer class="text-center py-8 text-gray-500 text-sm fade-in">
+    &copy; 2025 GoBite.in. All rights reserved.
+  </footer>
+</body>
+</html>
